@@ -1,11 +1,11 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('intermediate', table => {
-    table.increments('intermediateId').primary();
-    table.text('intermediateDifficulty');
-    table.text('intermediateArtist');
-    table.text('intermediateSong');
-    table.string('intermediateTechnique');
-    table.string('intermediateUrl');
+    table.increments('id').primary();
+    table.text('difficulty');
+    table.text('artist');
+    table.text('song');
+    table.string('technique');
+    table.string('url');
   });
 };
 
