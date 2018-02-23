@@ -39,8 +39,6 @@ app.put("/advanceds/:id", (request, response) => {
 });
 
 
-
-
 app.get("/intermediates", (request, response) => {
     queriesIntermediate.list().then(intermediates => {
         response.json({intermediates});
@@ -72,8 +70,6 @@ app.put("/intermediates/:id", (request, response) => {
         response.json({intermediate: intermediate[0]});
     }).catch(console.error);
 });
-
-
 
 
 app.use((request, response) => {
