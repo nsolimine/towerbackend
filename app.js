@@ -3,8 +3,10 @@ const app = express();
 const queriesAdvanced = require("./queriesAdvanced");
 const queriesIntermediate = require("./queriesIntermediate");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/advanceds", (request, response) => {
     queriesAdvanced.list().then(advanceds => {
