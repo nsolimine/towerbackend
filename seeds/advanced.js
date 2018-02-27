@@ -39,6 +39,6 @@ exports.seed = function(knex, Promise) {
         }]);
     })
     .then(() => {
-      return knex.raw('TRUNCATE advanced_id_seq RESTART WITH 6;');
+      return knex.raw('ALTER SEQUENCE advanced_id_seq RESTART WITH 6;');
     });
 };
