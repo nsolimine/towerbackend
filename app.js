@@ -12,29 +12,29 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
 
 app.get("/beginner", (request, response) => {
-  queriesbeginner.list().then(beginner => {
+  queriesBeginner.list().then(beginner => {
     response.json({beginner});
   }).catch(console.error);
 });
 app.get("/beginner/:id", (request, response) => {
-  queriesbeginner.read(request.params.id).then(beginner => {
+  queriesBeginner.read(request.params.id).then(beginner => {
     beginner
     ? response.json({beginner})
     : response.sendStatus(404)
   }).catch(console.error);
 });
 app.post("/beginner", (request, response) => {
-  queriesbeginner.create(request.body).then(beginner => {
+  queriesBeginner.create(request.body).then(beginner => {
     response.status(201).json({beginner: beginner});
   }).catch(console.error);
 });
 app.delete("/beginner/:id", (request, response) => {
-  queriesbeginner.delete(request.params.id).then(() => {
+  queriesBeginner.delete(request.params.id).then(() => {
     response.sendStatus(204);
   }).catch(console.error);
 });
 app.put("/beginner/:id", (request, response) => {
-  queriesbeginner.update(request.params.id, request.body).then(beginner => {
+  queriesBeginner.update(request.params.id, request.body).then(beginner => {
     response.json({beginner: beginner[0]});
   }).catch(console.error);
 });
@@ -99,29 +99,29 @@ app.put("/advanced/:id", (request, response) => {
 
 
 app.get("/expert", (request, response) => {
-    queriesexpert.list().then(expert => {
+    queriesExpert.list().then(expert => {
         response.json({expert});
     }).catch(console.error);
 });
 app.get("/expert/:id", (request, response) => {
-    queriesexpert.read(request.params.id).then(expert => {
+    queriesExpert.read(request.params.id).then(expert => {
         expert
             ? response.json({expert})
             : response.sendStatus(404)
     }).catch(console.error);
 });
 app.post("/expert", (request, response) => {
-    queriesexpert.create(request.body).then(expert => {
+    queriesExpert.create(request.body).then(expert => {
         response.status(201).json({expert: expert});
     }).catch(console.error);
 });
 app.delete("/expert/:id", (request, response) => {
-    queriesexpert.delete(request.params.id).then(() => {
+    queriesExpert.delete(request.params.id).then(() => {
         response.sendStatus(204);
     }).catch(console.error);
 });
 app.put("/expert/:id", (request, response) => {
-    queriesexpert.update(request.params.id, request.body).then(expert => {
+    queriesExpert.update(request.params.id, request.body).then(expert => {
         response.json({expert: expert[0]});
     }).catch(console.error);
 });
