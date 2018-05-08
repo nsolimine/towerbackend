@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.text('song');
     table.string('technique');
     table.string('url');
+    table.string('tabUrl');
   });
 };
 
