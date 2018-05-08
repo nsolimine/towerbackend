@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
-const queriesAdvanced = require("./queriesAdvanced");
+const queriesBeginner = require("./queriesBeginner");
 const queriesIntermediate = require("./queriesIntermediate");
+const queriesAdvanced = require("./queriesAdvanced");
+const queriesExpert = require("./queriesExpert");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
@@ -9,68 +11,118 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
 
-app.get("/advanceds", (request, response) => {
-    queriesAdvanced.list().then(advanceds => {
-        response.json({advanceds});
-    }).catch(console.error);
+app.get("/beginner", (request, response) => {
+  queriesbeginner.list().then(beginner => {
+    response.json({beginner});
+  }).catch(console.error);
+});
+app.get("/beginner/:id", (request, response) => {
+  queriesbeginner.read(request.params.id).then(beginner => {
+    beginner
+    ? response.json({beginner})
+    : response.sendStatus(404)
+  }).catch(console.error);
+});
+app.post("/beginner", (request, response) => {
+  queriesbeginner.create(request.body).then(beginner => {
+    response.status(201).json({beginner: beginner});
+  }).catch(console.error);
+});
+app.delete("/beginner/:id", (request, response) => {
+  queriesbeginner.delete(request.params.id).then(() => {
+    response.sendStatus(204);
+  }).catch(console.error);
+});
+app.put("/beginner/:id", (request, response) => {
+  queriesbeginner.update(request.params.id, request.body).then(beginner => {
+    response.json({beginner: beginner[0]});
+  }).catch(console.error);
 });
 
-app.get("/advanceds/:id", (request, response) => {
+
+app.get("/intermediate", (request, response) => {
+  queriesIntermediate.list().then(intermediate => {
+    response.json({intermediate});
+  }).catch(console.error);
+});
+app.get("/intermediate/:id", (request, response) => {
+  queriesIntermediate.read(request.params.id).then(intermediate => {
+    intermediate
+    ? response.json({intermediate})
+    : response.sendStatus(404)
+  }).catch(console.error);
+});
+app.post("/intermediate", (request, response) => {
+  queriesIntermediate.create(request.body).then(intermediate => {
+    response.status(201).json({intermediate: intermediate});
+  }).catch(console.error);
+});
+app.delete("/intermediate/:id", (request, response) => {
+  queriesIntermediate.delete(request.params.id).then(() => {
+    response.sendStatus(204);
+  }).catch(console.error);
+});
+app.put("/intermediate/:id", (request, response) => {
+  queriesIntermediate.update(request.params.id, request.body).then(intermediate => {
+    response.json({intermediate: intermediate[0]});
+  }).catch(console.error);
+});
+
+
+app.get("/advanced", (request, response) => {
+    queriesAdvanced.list().then(advanced => {
+        response.json({advanced});
+    }).catch(console.error);
+});
+app.get("/advanced/:id", (request, response) => {
     queriesAdvanced.read(request.params.id).then(advanced => {
         advanced
             ? response.json({advanced})
             : response.sendStatus(404)
     }).catch(console.error);
 });
-
-app.post("/advanceds", (request, response) => {
+app.post("/advanced", (request, response) => {
     queriesAdvanced.create(request.body).then(advanced => {
         response.status(201).json({advanced: advanced});
     }).catch(console.error);
 });
-
-app.delete("/advanceds/:id", (request, response) => {
+app.delete("/advanced/:id", (request, response) => {
     queriesAdvanced.delete(request.params.id).then(() => {
         response.sendStatus(204);
     }).catch(console.error);
 });
-
-app.put("/advanceds/:id", (request, response) => {
+app.put("/advanced/:id", (request, response) => {
     queriesAdvanced.update(request.params.id, request.body).then(advanced => {
         response.json({advanced: advanced[0]});
     }).catch(console.error);
 });
 
 
-app.get("/intermediates", (request, response) => {
-    queriesIntermediate.list().then(intermediates => {
-        response.json({intermediates});
+app.get("/expert", (request, response) => {
+    queriesexpert.list().then(expert => {
+        response.json({expert});
     }).catch(console.error);
 });
-
-app.get("/intermediates/:id", (request, response) => {
-    queriesIntermediate.read(request.params.id).then(intermediate => {
-        intermediate
-            ? response.json({intermediate})
+app.get("/expert/:id", (request, response) => {
+    queriesexpert.read(request.params.id).then(expert => {
+        expert
+            ? response.json({expert})
             : response.sendStatus(404)
     }).catch(console.error);
 });
-
-app.post("/intermediates", (request, response) => {
-    queriesIntermediate.create(request.body).then(intermediate => {
-        response.status(201).json({intermediate: intermediate});
+app.post("/expert", (request, response) => {
+    queriesexpert.create(request.body).then(expert => {
+        response.status(201).json({expert: expert});
     }).catch(console.error);
 });
-
-app.delete("/intermediates/:id", (request, response) => {
-    queriesIntermediate.delete(request.params.id).then(() => {
+app.delete("/expert/:id", (request, response) => {
+    queriesexpert.delete(request.params.id).then(() => {
         response.sendStatus(204);
     }).catch(console.error);
 });
-
-app.put("/intermediates/:id", (request, response) => {
-    queriesIntermediate.update(request.params.id, request.body).then(intermediate => {
-        response.json({intermediate: intermediate[0]});
+app.put("/expert/:id", (request, response) => {
+    queriesexpert.update(request.params.id, request.body).then(expert => {
+        response.json({expert: expert[0]});
     }).catch(console.error);
 });
 
