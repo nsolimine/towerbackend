@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Creedence Clearwater Revival',
           song: 'Bad Moon Rising',
           technique: 'Bad Moon Rising is a timeless rock tune that uses steady, basic strumming.  It is a great song to start learning chord switching and playing in time.',
-          url: 'https://www.youtube.com/watch?v=5BmEGm-mraE',
+          url: 'https://www.youtube.com/embed/5BmEGm-mraE',
           tabUrl: 'https://www.songsterr.com/a/wsa/creedence-clearwater-revival-bad-moon-rising-tab-s4232t4'
         }]);
     })
