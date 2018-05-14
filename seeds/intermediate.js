@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Derek & The Dominoes',
           song: 'Layla',
           technique: 'Layla utilizes hammer-ons and pull-offs, slide guitar, and whole step bends.',
-          url: 'https://www.youtube.com/watch?v=XVGTGW0cCw8',
+          url: 'https://www.youtube.com/embed/XVGTGW0cCw8',
           tabUrl: 'https://www.songsterr.com/a/wsa/derek-and-the-dominos-layla-tab-s290t2'
         },{
           id: 2,
@@ -15,7 +15,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Pink Floyd',
           song: 'Wish You Were Here',
           technique: 'Wish You Were Here incorporates an iconic acoustic melody that requires slides and pull-offs.',
-          url: 'https://www.youtube.com/watch?v=IXdNnw99-Ic',
+          url: 'https://www.youtube.com/embed/IXdNnw99-Ic',
           tabUrl: 'https://www.songsterr.com/a/wsa/pink-floyd-wish-you-were-here-tab-s153t2'
         },{
           id: 3,
@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Foo Fighters',
           song: 'Everlong',
           technique: 'Everlong is written in drop-d tuning, and requires complex picking and sliding octaves.',
-          url: 'https://www.youtube.com/watch?v=crOZk88eCcg',
+          url: 'https://www.youtube.com/embed/crOZk88eCcg',
           tabUrl: 'https://www.songsterr.com/a/wsa/foo-fighters-everlong-tab-s86505t2'
         },{
           id: 4,
@@ -31,7 +31,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Red Hot Chili Peppers',
           song: 'Under The Bridge',
           technique: 'Under The Bridge is a great foundation to begin learning to fingerpick, and how to use bar chords with suspensions.',
-          url: 'https://www.youtube.com/watch?v=4UnU3r0M3zg',
+          url: 'https://www.youtube.com/embed/4UnU3r0M3zg',
           tabUrl: 'https://www.songsterr.com/a/wsa/red-hot-chili-peppers-under-the-bridge-tab-s99t2'
         },{
           id: 5,
@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
           artist: 'The White Stripes',
           song: 'Blue Orchid',
           technique: 'Blue Orchid utilizes space within the time signiture to create really fun to play heavy riffs.',
-          url: 'https://www.youtube.com/watch?v=YuWfCmbo0Hk',
+          url: 'https://www.youtube.com/embed/YuWfCmbo0Hk',
           tabUrl: 'https://www.songsterr.com/a/wsa/white-stripes-blue-orchid-tab-s20552t0'
         }]);
     })
