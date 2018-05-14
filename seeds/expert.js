@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
           artist: 'Al di Meola',
           song: 'Mediterranean Sundance',
           technique: 'Mediterranean Sundance is an unforgivingly difficult song that requires insane speed on an acoustic guitar and flamenco style strumming.',
-          url: 'https://www.youtube.com/embed/5GTbM5-ku-M',
+          url: 'https://www.youtube.com/embed/hhccIfevjCU',
           tabUrl: 'https://www.songsterr.com/a/wsa/al-di-meola-mediterranean-sundance-tab-s30926t0'
         }]);
     })
